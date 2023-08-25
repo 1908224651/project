@@ -45,6 +45,11 @@ const routes =[
         name:'inProgress',  
 		component:()=>import('../views/message/components/inProgress.vue')
     },
+	{
+        path:'/workOrder',   //进行中
+        name:'workOrder',  
+		component:()=>import('../views/workOrder/index.vue')
+    },
 ]
 
 const router = createRouter ({

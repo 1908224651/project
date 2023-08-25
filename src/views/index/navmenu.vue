@@ -22,6 +22,11 @@ const jiedan = () => {
 		path: '/message'
 	})
 }
+const workOrder = () =>{
+	router.push({
+		path:'/workOrder'
+	})
+}
 </script>
 
 <template>
@@ -57,7 +62,7 @@ const jiedan = () => {
 			<ul style="height: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 55px; margin-top: 20px">
 				<li  @click="baodan" style="display: flex; flex-direction: column; align-items: center"><img style="width: 50px; height: 50px" class="colorOne" src="@/assets/images/first.png" alt="" /><span>报单</span></li>
 				<li  @click="jiedan" style="display: flex; flex-direction: column; align-items: center"><img style="width: 50px; height: 50px" class="colorTwo" src="@/assets/images/second.png" alt="" /><span>接单</span></li>
-				<li  @click="baodan" style="display: flex; flex-direction: column; align-items: center"><img style="width: 50px; height: 50px" class="colorThree" src="@/assets/images/third.png" alt="" /><span>我的工单</span></li>
+				<li  @click="workOrder" style="display: flex; flex-direction: column; align-items: center"><img style="width: 50px; height: 50px" class="colorThree" src="@/assets/images/third.png" alt="" /><span>我的工单</span></li>
 			</ul>
 		</div>
 </template>

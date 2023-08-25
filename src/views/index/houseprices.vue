@@ -8,7 +8,7 @@ let title = ref('首页')
     <div class="houseprices" style="display: flex;">
 		<div style="background-color: aqua;width: 100px;height: 100px;"></div>
 		<div style="background-color: red;width: 100px;height: 100px;"></div>
-		<div style="background-color: black;width: 100px;height: 100px;"></div>
+		<!-- <div style="background-color: black;width: 100px;height: 100px;"></div> -->
         <!-- <ul> -->
             <!-- <li class="houseprices-state"> -->
                 <!-- <img src="@/assets/images/southeast.jpeg" alt=""> -->
