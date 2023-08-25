@@ -593,3 +593,22 @@ header {
     background:#EB4646;
     scroll-snap-align: end;
 }
+.flexColumn {
+	display: flex;
+	flex-direction: column;
+}
+
+.flexRow {
+	display: flex;
+	flex-direction: row;
+}
+.titleDialog {
+	text-align: center;
+}
+.flex1 {
+	flex: 1;
+}
+
+.flexWrap {
+	flex-wrap: wrap;
+}
