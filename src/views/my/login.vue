@@ -11,6 +11,7 @@ function goBack(){
 </script>
 
 <template>
+
     <div class="login">
         <div class="login-list">
             <div class="login-hd">

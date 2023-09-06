@@ -15,7 +15,37 @@ const orderList = [
 		number: '202308210001',
 		text: 'hhhhhhhhhh',
 		derparment: '工程维hrtert护科'
-	}
+	},
+	{
+		number: '202308210001',
+		text: '29号廊桥扶梯处不锈钢护角变形',
+		derparment: '工程维护科'
+	},
+	{
+		number: '202308210001',
+		text: 'hhhhhhhhhh',
+		derparment: '工程维hrtert护科'
+	},
+	{
+		number: '202308210001',
+		text: '29号廊桥扶梯处不锈钢护角变形',
+		derparment: '工程维护科'
+	},
+	{
+		number: '202308210001',
+		text: 'hhhhhhhhhh',
+		derparment: '工程维hrtert护科'
+	},
+	{
+		number: '202308210001',
+		text: '29号廊桥扶梯处不锈钢护角变形',
+		derparment: '工程维护科'
+	},
+	{
+		number: '202308210001',
+		text: 'hhhhhhhhhh',
+		derparment: '工程维hrtert护科'
+	},
 ]
 const aaa = () => {
 	orderList.forEach(item => {
@@ -25,6 +55,11 @@ const aaa = () => {
 onMounted(() => {
 	aaa()
 })
+const toDetail = () => {
+	router.push({
+		path:'/orderDetail'
+	})
+}
 </script>
 
 <template>
@@ -38,7 +73,7 @@ onMounted(() => {
 			</div>
 		</div>
 		<div class="orderBox" v-for="i in orderList">
-			<ul class="orderContent">
+			<ul class="orderContent" @click="toDetail">
 				<div class="orderLeft">
 					<span class="font-16">{{ i.number }}</span>
 					<span class="font-16">{{ i.text }}</span>

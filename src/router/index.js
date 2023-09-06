@@ -3,7 +3,7 @@ import { createRouter,createWebHashHistory } from "vue-router"
 const routes =[
     {
         path:'/',   //首页
-        redirect:'/index'
+        redirect:'/login'
     },
     {
         path:'/index',   //首页
@@ -28,7 +28,11 @@ const routes =[
     {
         path:'/login',   //登录
         name:'login',  
-        component:()=>import('../views/my/login.vue')
+		meta:{
+			hideTabBar:true
+		  },
+        component:()=>import('../views/login/index.vue')
+        // component:()=>import('../views/my/login.vue')
     },
 	{
         path:'/unacceptedOrders',   //未接单
@@ -46,9 +50,19 @@ const routes =[
 		component:()=>import('../views/message/components/inProgress.vue')
     },
 	{
-        path:'/workOrder',   //进行中
+        path:'/workOrder',   //我的工单
         name:'workOrder',  
 		component:()=>import('../views/workOrder/index.vue')
+    },
+	{
+        path:'/orderDetail',   //我的工单详情页
+        name:'orderDetail',  
+		component:()=>import('../views/workOrder/orderDetail.vue')
+    },
+	{
+        path:'/changePassword',   //修改密码
+        name:'changePassword',  
+        component:()=>import('../views/my/changePassword.vue')
     },
 ]
 

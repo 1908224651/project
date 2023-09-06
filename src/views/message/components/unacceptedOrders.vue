@@ -25,10 +25,10 @@ const toBack = () => {
 				<div style="width: 9%">
 					<img src="@/assets/images/third.png" alt="" />
 				</div>
-				<span style="color: white; font-size: 18px; vertical-align: bottom; margin-left: 15px">工单-接单</span>
+				<span class="titleBox">工单-接单</span>
 			</div>
 		</div>
-		<div class="backBox">
+		<div class="backBox" style="position: fixed; top: 50px">
 			<ul class="backContent">
 				<li style="flex: 2.5">
 					<el-button style="color: #fff" link @click="toBack"
@@ -40,60 +40,112 @@ const toBack = () => {
 		</div>
 
 		<div class="content">
-			<div class="content">
-				<ul style="height: 100%; display: flex; flex-direction: column">
-					<div class="ulBox">
-						<div style="flex: 1; font-weight: bold">工单号</div>
-						<div style="flex: 1; display: contents">202308210001</div>
-					</div>
-					<div class="ulBox">
-						<div style="flex: 1; font-weight: bold">状态</div>
-						<div style="flex: 1; display: contents">已派遣</div>
-					</div>
-					<div class="ulBox">
-						<div style="flex: 1; font-weight: bold">联系人</div>
-						<div style="flex: 1; display: contents">尹梓源</div>
-					</div>
-					<div class="ulBox">
-						<div style="flex: 1; font-weight: bold">联系电话</div>
-						<div style="flex: 1; display: contents">19546100201</div>
-					</div>
-					<div class="ulBox">
-						<div style="flex: 1; font-weight: bold">负责部门</div>
-						<div style="flex: 1; display: contents">工程维护科</div>
-					</div>
-					<div class="ulBox">
-						<div style="flex: 1; font-weight: bold">具体位置</div>
-						<div style="flex: 1; display: contents">南指廊</div>
-					</div>
-					<div class="ulBox">
-						<div style="flex: 1; font-weight: bold">问题描述</div>
-						<div style="flex: 1; display: contents">29号廊桥扶梯处不锈钢护角变形</div>
-					</div>
-					<div class="ulBox">
-						<div style="flex: 1; font-weight: bold">派单时间</div>
-						<div style="flex: 1; display: contents">2023-08-21 15:55</div>
-					</div>
-					<div class="ulBox">
-						<div style="flex: 1; font-weight: bold">等级</div>
-						<div style="flex: 1; display: contents">紧急</div>
-					</div>
-					<div style="text-align: center;  gap:55px" class="footerBox">
-						<el-button size="large" style="font-size: 14px;flex: 1;background-color: #70B603;color: #ffff;">接单</el-button>
-						<el-button size="large" style="font-size: 14px;flex: 1;background-color: #A30014;color: #ffff;">退单</el-button>
-					</div>
-				</ul>
-			</div>
+			<ul style="height: 100%; display: flex; flex-direction: column">
+				<div class="ulBox">
+					<div class="titleleft">工单号</div>
+					<div class="titleRight">202308210001</div>
+				</div>
+				<div class="ulBox">
+					<div class="titleleft">状态</div>
+					<div class="titleRight">已派遣</div>
+				</div>
+				<div class="ulBox">
+					<div class="titleleft">联系人</div>
+					<div class="titleRight">尹梓源</div>
+				</div>
+				<div class="ulBox">
+					<div class="titleleft">联系电话</div>
+					<div class="titleRight">19546100201</div>
+				</div>
+				<div class="ulBox">
+					<div class="titleleft">负责部门</div>
+					<div class="titleRight">工程维护科</div>
+				</div>
+				<div class="ulBox">
+					<div class="titleleft">具体位置</div>
+					<div class="titleRight">南指廊</div>
+				</div>
+				<div class="ulBox">
+					<div class="titleleft">问题描述</div>
+					<div class="titleRight">29号廊桥扶梯处不锈钢护角变形</div>
+				</div>
+				<div class="ulBox">
+					<div class="titleleft">派单时间</div>
+					<div class="titleRight">2023-08-21 15:55</div>
+				</div>
+				<div class="ulBox">
+					<div class="titleleft">等级</div>
+					<div class="titleRight">紧急</div>
+				</div>
+				<div class="deliveryImages imageBox">
+					<div class="titleleft">交付图片</div>
+					<li class="container">
+						<img src="../../../assets/images/bg.jpg" class="img" />
+					</li>
+				</div>
+				<div class="footerBoxTwo">
+					<el-button size="large" class="buttonBox" style="background-color: #70b603;">接单</el-button>
+					<el-button size="large" class="buttonBox" style="background-color: #a30014;">退单</el-button>
+				</div>
+			</ul>
 		</div>
 	</div>
 </template>
 
 <style scoped>
+.img {
+	border-radius: 10px;
+	max-width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+}
+.container {
+	width: 230px;
+	height: 230px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px 5px;
+}
+.deliveryImages {
+	display: flex;
+	flex-direction: column;
+	border-bottom: 1px solid rgba(205, 205, 206, 0.5);
+	height: 100%;
+	/* align-items: center; */
+	justify-content: center;
+	font-size: 16px;
+	border-radius: 5px;
+	padding: 5px;
+}
 .footerBox {
 	display: flex;
 	flex-direction: row;
 	height: 100%;
 	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	padding: 5px;
+}
+.content::after {
+	content: '';
+	height: 60px;
+	display: block;
+}
+.buttonBox {
+	font-size: 14px;
+	flex: 1;
+	color: #ffff;
+}
+.footerBoxTwo {
+	color: #ffff;
+	text-align: center;
+	gap: 55px;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	height: 100%;
 	justify-content: center;
 	font-size: 16px;
 	padding: 5px;
@@ -111,6 +163,11 @@ const toBack = () => {
 .content {
 	height: 100%;
 	background-color: #ffff;
+}
+.content::before {
+	content: '';
+	height: 80px;
+	display: block;
 }
 .backBox {
 	background-color: #027db4;
@@ -174,7 +231,7 @@ const toBack = () => {
 }
 .find {
 	width: 100%;
-	height: 90vh;
+	height: 110vh;
 }
 .el-tabs__item.is-active {
 	color: rgb(218, 16, 16);

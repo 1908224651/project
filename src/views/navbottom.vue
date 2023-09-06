@@ -1,5 +1,8 @@
 <script setup>
 import {ref} from 'vue'
+import { useRoute } from 'vue-router';
+
+const route = useRoute()
 let title = ref('首页')
 let footerList = ref([
     {title:'首页',icon:'icon-shouye',path:'/index'},
@@ -11,6 +14,8 @@ let footerList = ref([
 
 <template>
 <footer>
+	<!-- <tab-bar v-if="!route.meta.hideTabBar" /> -->
+
     <div class="footer">
        <div class="footer-list" style="background-color: rgb(3 86 142);">
             <ul>

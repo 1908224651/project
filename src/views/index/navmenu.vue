@@ -22,52 +22,42 @@ const jiedan = () => {
 		path: '/message'
 	})
 }
-const workOrder = () =>{
+const workOrder = () => {
 	router.push({
-		path:'/workOrder'
+		path: '/workOrder'
 	})
 }
 </script>
 
 <template>
-		<!-- <div style="display: flex; padding: 15px; align-items: center">
-			<div class="dashboadrd-panel colorOne" style="align-items: center" @click="baodan">
-				<img src="@/assets/images/first.png" alt="" />
-				<div class="dashboadrd-total-group" style="margin-left: 35px">
-					<p style="color: white; font-size: 19px">报单</p>
-				</div>
-			</div>
-			<div class="dashboadrd-panel colorTwo" @click="jiedan">
-				<img src="@/assets/images/second.png" alt="" />
-				<div class="dashboadrd-total-group" style="margin-left: 35px">
-					<p style="color: white; font-size: 19px">接单</p>
-				</div>
-			</div>
-		</div>
-		<div style="display: flex; padding: 15px; align-items: center">
-			<div class="dashboadrd-panel colorThree" style="align-items: center" @click="baodan">
-				<img src="@/assets/images/third.png" alt="" />
-				<div class="dashboadrd-total-group" style="margin-left: 35px">
-					<p style="color: white; font-size: 19px">我的工单</p>
-				</div>
-			</div> -->
-		<!-- <div class="dashboadrd-panel colorFour">
-				<img src="@/assets/images/fourth.png" alt="" />
-				<div class="dashboadrd-total-group" style="margin-left: 35px;">
-					<p style="color: white;font-size: 19px;">其他</p>
-				</div>
-			</div> -->
-		<!-- </div> -->
-		<div style="height: 100%">
-			<ul style="height: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 55px; margin-top: 20px">
-				<li  @click="baodan" style="display: flex; flex-direction: column; align-items: center"><img style="width: 50px; height: 50px" class="colorOne" src="@/assets/images/first.png" alt="" /><span>报单</span></li>
-				<li  @click="jiedan" style="display: flex; flex-direction: column; align-items: center"><img style="width: 50px; height: 50px" class="colorTwo" src="@/assets/images/second.png" alt="" /><span>接单</span></li>
-				<li  @click="workOrder" style="display: flex; flex-direction: column; align-items: center"><img style="width: 50px; height: 50px" class="colorThree" src="@/assets/images/third.png" alt="" /><span>我的工单</span></li>
-			</ul>
-		</div>
+	<div style="height: 100%">
+		<ul class="ulBox">
+			<li @click="baodan" class="liBox"><img class="colorOne imgBox" src="@/assets/images/first.png" alt="" /><span>报单</span></li>
+			<li @click="jiedan" class="liBox"><img class="colorTwo imgBox" src="@/assets/images/second.png" alt="" /><span>接单</span></li>
+			<li @click="workOrder" class="liBox"><img class="colorThree imgBox" src="@/assets/images/third.png" alt="" /><span>我的工单</span></li>
+		</ul>
+	</div>
 </template>
 
 <style scoped>
+.ulBox {
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 55px;
+	margin-top: 20px;
+}
+.imgBox {
+	width: 50px;
+	height: 50px;
+}
+.liBox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 .flexColumn {
 	display: flex;
 	flex-direction: column;

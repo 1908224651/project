@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { Plus } from '@element-plus/icons-vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
@@ -30,18 +30,18 @@ const cancel = () => {
 				<div style="width: 9%">
 					<img src="@/assets/images/third.png" alt="" />
 				</div>
-				<span style="color: white; font-size: 18px; vertical-align: bottom; margin-left: 15px">工单-报单</span>
+				<span class="titleBox">工单-报单</span>
 			</div>
 		</div>
 		<div style="flex: 1">
 			<el-form inline label-position="right" style="margin: 35px" label-width="100px">
-				<el-form-item label="问题描述：" style="margin: 20px">
+				<el-form-item label="问题描述：" class="m20">
 					<el-input size="" clearable />
 				</el-form-item>
-				<el-form-item label="具体位置：" style="margin: 20px">
+				<el-form-item label="具体位置：" class="m20">
 					<el-input size="" clearable />
 				</el-form-item>
-				<el-form-item label="上传图片:" style="margin: 20px">
+				<el-form-item label="上传图片:" class="m20">
 					<el-upload action="#" list-type="picture-card" :auto-upload="false">
 						<el-icon><Plus /></el-icon>
 					</el-upload>
@@ -56,6 +56,9 @@ const cancel = () => {
 </template>
 
 <style scoped>
+.m20{
+	margin: 20px;
+}
 .button {
 	font-size: 14px;
 	flex: 3;
@@ -81,6 +84,6 @@ const cancel = () => {
 }
 .find {
 	width: 100%;
-	height: 100vh;
+	height: 80vh;
 }
 </style>

@@ -35,7 +35,7 @@ function jump(){
     <div class="spread" v-show="adBack">
         <span class="jump" @click="jump">点击跳转<b>{{n}}</b></span>
     </div>
-    <div v-if="!adBack">
+    <div>
         <Header />
         <Headerimg />
         <Navmenu />

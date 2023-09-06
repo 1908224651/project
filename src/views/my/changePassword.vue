@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import axios from 'axios'
 import { useRouter } from 'vue-router'
 const router = useRouter()
@@ -16,14 +17,12 @@ onMounted(async () => {
 	//   mymodule2.value = res1.data;
 	//   mymodule3.value = res2.data;
 })
-const change = () => {
-	router.push({
-		path: '/changePassword'
-	})
-}
-const logOut = () => {
-	router.push({
-		path: '/login'
+const confirm = () => {
+	ElMessageBox.alert('请使用新密码重新登录', '修改成功', {
+		// if you want to disable its autofocus
+		// autofocus: false,
+		confirmButtonText: '确定',
+		type: 'success'
 	})
 }
 </script>
@@ -80,43 +79,42 @@ const logOut = () => {
             </div>
         </div>
     </div> -->
-	<div class="find" style="display: flex; flex-direction: column">
-		<div class="find-hd" style="display: flex; flex-direction: row">
+	<div class="find find-box">
+		<div class="find-hd find-hd-box">
 			<div class="fin-hd-item dashboadrd-panel" style="background-color: #03568e; display: flex; align-items: center">
-				<span style="color: white; font-size: 18px; vertical-align: bottom; margin-left: 15px">济南机场航站楼智慧管控系统</span>
+				<span style="color: white; font-size: 18px; vertical-align: bottom; margin-left: 15px">修改密码</span>
 			</div>
 		</div>
-		<div class="content">
-			<ul style="height: 100%; display: flex; flex-direction: column">
-				<div class="ulBox">
-					<div class="titleleft">姓名</div>
-					<div class="titleRight">尹梓源</div>
-				</div>
-				<div class="ulBox">
-					<div class="titleleft">联系电话</div>
-					<div class="titleRight">19546100201</div>
-				</div>
-				<div class="ulBox">
-					<div class="titleleft">部门</div>
-					<div class="titleRight">航管部</div>
-				</div>
-				<div class="ulBox">
-					<div class="titleleft">科室</div>
-					<div class="titleRight">智慧运控科</div>
-				</div>
-				<div class="ulBox">
-					<div class="titleleft">外包单位</div>
-					<div class="titleRight">智慧运控</div>
-				</div>
-				<div style="text-align: center; gap: 55px" class="footerBox">
-					<el-button size="large" style="font-size: 14px; flex: 1; background-color: #03568e; color: #ffff" @click="change">修改密码</el-button>
-					<el-button size="large" style="font-size: 14px; flex: 1; background-color: #a30014; color: #ffff" @click="logOut">退出登录</el-button>
-				</div>
-			</ul>
-		</div>
+		<el-form label-position="right" label-width="100px" style="flex: 2">
+			<el-form-item label="新密码："><el-input class="inputWt"></el-input></el-form-item>
+			<el-form-item label="确认新密码："><el-input class="inputWt"></el-input></el-form-item>
+			<el-form-item style="margin-bottom: 15px">
+				<el-button size="large" class="confirmChange" @click="confirm">确认修改</el-button>
+			</el-form-item>
+		</el-form>
 	</div>
 </template>
 <style scoped>
+.inputWt {
+	width: 180px;
+}
+.find-box {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.find-hd-box {
+	display: flex;
+	flex-direction: row;
+	height: 100px;
+	flex: 1;
+}
+.confirmChange {
+	font-size: 14px;
+	background-color: #03568e;
+	color: #ffff;
+}
 .footerBox {
 	display: flex;
 	flex-direction: row;
